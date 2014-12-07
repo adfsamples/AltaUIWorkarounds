@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="inputDate.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/samples/template.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelHeader text="&lt;af:inputDate>" id="ph1">
+                        <p>Workarounds for the &lt;af:outputData&gt; component.</p>
+                        <af:panelHeader text="vertical-align issue for webkit" id="ph2">
+                            <p>When the inputDate component is grouped with other sibling components in a
+                               panelGroupLayout component, and placed in a panelLabelAndMessage component, and then in a
+                               panelFormLayout component, it might not be vertically aligned properly in webkit
+                               browsers. To fix it, change the vertical-align property from "50%" in Alta skin to
+                               "middle".</p>
+                            <af:panelFormLayout id="pfl1">
+                                <af:panelLabelAndMessage id="plam1" label="Starts">
+                                    <af:panelGroupLayout id="pgl3">
+                                        <af:selectBooleanRadio id="sbr1" text="On" label="On" simple="true"/>
+                                        <af:inputDate id="id1" label="On" simple="true"/>
+                                    </af:panelGroupLayout>
+                                </af:panelLabelAndMessage>
+                            </af:panelFormLayout>
+                        </af:panelHeader>
+                    </af:panelHeader>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

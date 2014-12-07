@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Welcome">
+    <page>/samples/Welcome.jsf</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>goHome</from-outcome>
+      <to-activity-id>Welcome</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

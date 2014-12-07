@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>altaworkarounds-v1.desktop</id>
+    <family>altaworkarounds</family>
+    <extends>alta-v1.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>skins/altaworkarounds/altaworkarounds-v1.css</style-sheet-name>
+    <bundle-name>com.adfsamples.altaworkarounds.Bundle</bundle-name>
+  </skin>
+</skins>

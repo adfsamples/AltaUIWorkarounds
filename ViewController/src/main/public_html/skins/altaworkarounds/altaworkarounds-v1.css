@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+/*****************************************************************************************************************
+ * Alta UI bug fixes and enhancements
+ ****************************************************************************************************************/
+/*
+ * bugfix: When the inputDate component is grouped with other sibling components in a
+ * panelGroupLayout component, and placed in a panelLabelAndMessage component, and then in a
+ * panelFormLayout component, it might not be vertically aligned properly in webkit browsers.
+ */
+@agent webkit {
+    af|panelLabelAndMessage::content-cell.AFPanelFormLayoutContentCell af|inputDate {
+        vertical-align: middle; /* vertical-align: 50%; (ln:6133) */
+    }
+}
+
