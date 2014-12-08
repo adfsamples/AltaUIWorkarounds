@@ -11,7 +11,7 @@
             </afc:facet>
         </afc:component>
     </af:xmlContent>
-    <af:decorativeBox id="db1" topHeight="60px">
+    <af:decorativeBox id="db1" topHeight="80px">
         <f:facet name="top">
             <af:panelFormLayout id="pfl1">
                 <af:selectOneRadio id="sor1" label="Select Skin" autoSubmit="true"

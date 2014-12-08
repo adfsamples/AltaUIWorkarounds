@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="panelFormLayout.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/samples/template.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelFormLayout id="pfl2" maxColumns="2" rows="3">
+                        <af:panelLabelAndMessage label="Label 1" id="plam1">
+                            <af:outputText value="outputText in panelLabelAndMessage" id="ot1"/>
+                        </af:panelLabelAndMessage>
+                        <af:inputText id="it2" label="Label 2" columns="40" placeholder="normal inputText"/>
+                        <af:inputText id="it3" label="Label 3" rows="8" columns="60" placeholder="multi-row inputText"/>
+                        <af:selectOneRadio id="sor1" label="Label 1" layout="horizontal">
+                            <af:selectItem label="Item Label 1" value="1" id="si1"/>
+                            <af:selectItem label="Item Label 2" value="2" id="si2"/>
+                            <af:selectItem label="Item Label 3" value="3" id="si3"/>
+                        </af:selectOneRadio>
+                        <af:selectOneRadio id="sor2" label="Label 1">
+                            <af:selectItem label="Item Label 1" value="1" id="si4"/>
+                            <af:selectItem label="Item Label 2" value="2" id="si5"/>
+                            <af:selectItem label="Item Label 3" value="3" id="si6"/>
+                        </af:selectOneRadio>
+                        <af:panelLabelAndMessage label="Label 1" id="plam2">
+                            <af:panelGroupLayout id="pgl1" layout="vertical">
+                                <af:selectBooleanRadio id="sbr1" text="selectBooleanRadio 1" label="Label 1"
+                                                       simple="true"/>
+                                <af:selectBooleanRadio id="sbr2" text="selectBooleanRadio 2" label="Label 2"
+                                                       simple="true"/>
+                                <af:panelGroupLayout id="pgl2">
+                                    <af:selectBooleanRadio id="sbr3" text="selectBooleanRadio 3" label="Label 3"
+                                                           simple="true"/>
+                                    <af:inputText id="it1" label="Label 4" simple="true" columns="5"/>
+                                    <af:outputText value="outputText1" id="ot2"/>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                        </af:panelLabelAndMessage>
+                    </af:panelFormLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>
