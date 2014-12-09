@@ -41,24 +41,36 @@ af|panelFormLayout::label-cell {
   vertical-align: top;  /* more commonly expected */
 }
 
-/* uses line-height and vertical-align (instead of padding) to line up 
- * the label-cell with the corresponding content-cell. this approach 
+/* uses inline-block and vertical-align (instead of padding) to line up 
+ * the label with the corresponding content-cell. this approach 
  * is supposed to work better in most cases, and provides the consistent
  * styling for top, middle and bottom vertical-align of the label cell.
  */
-af|panelFormLayout::label-cell label {
+label {
   box-sizing: border-box;
   display: inline-block;
   vertical-align: middle;
-  line-height: 28px;
+  line-height: 1.4;
   padding-top: 0;
-  padding-bottom: 0;
+  padding-bottom: 0;    
+}
+
+af|panelFormLayout::label-cell label {
+  -tr-rule-ref: selector("label");
   white-space: nowrap; /* more commonly expected */
 }
 
 /*
  * Start of inputText
  */
+af|inputText::content {
+  box-sizing: border-box;
+  height: 26px;
+  margin: 1px;
+  padding: 5px;
+  line-height: 1.4;
+}
+
 af|inputText:multi-row af|inputText::label {
   padding-top: 3px; /* padding-top: 0px; (6644) */
 }
@@ -82,12 +94,43 @@ af|inputText:multi-row .AFPanelFormLayoutContentCell {
     padding-top: 3px;
   }    
 }
+/* End of inputText */
 
-/* uses the same line-height to ensure consistent vertical distribution even
+/*
+ * Start of selectOneRadio
+ */
+
+/* use the same line-height to ensure consistent vertical distribution even
  * when grouped with other components.
  */
+af|selectBooleanCheckbox::content,
+af|selectManyCheckbox::content,
+af|selectBooleanRadio::content,
 af|selectOneRadio::content {
   line-height: 28px;
+}
+
+/* simplify the padding */
+/* bugfix: the selectOneRadio component has horizontal padding, but it's 
+ * missing from the selectBooleanRadio. See alta-v1-desktop.css:10151.
+ */
+af|selectBooleanCheckbox::content-input,
+af|selectManyCheckbox::content-input,
+af|selectBooleanRadio::content-input,
+af|selectOneRadio::content-input,
+af|selectBooleanCheckbox::content-input:rtl
+af|selectManyCheckbox::content-input:rtl,
+af|selectBooleanRadio::content-input:rtl,
+af|selectOneRadio::content-input:rtl {
+  padding: 2px;
+}
+
+/* add some space between select items */
+af|selectBooleanCheckbox::item-text + af|selectBooleanCheckbox::content-input,
+af|selectManyCheckbox::item-text + af|selectManyCheckbox::content-input,
+af|selectBooleanRadio::item-text + af|selectBooleanRadio::content-input,
+af|selectOneRadio::item-text + af|selectOneRadio::content-input {
+    margin-left: 10px;
 }
 
 @agent webkit {
@@ -95,16 +138,30 @@ af|selectOneRadio::content {
     padding-top: 3px; /* padding-top: 7px; (10392) */
   }    
 }
+/* End of selectOneRadio */
 
-/* bugfix: the selectOneRadio component has horizontal padding, but it's 
- * missing from the selectBooleanRadio. See alta-v1-desktop.css:10151.
+/*
+ * Start of selectBooleanRadio
  */
-af|selectBooleanRadio::content-input {
-  padding: 0px 3px 0px 2px; 
+
+/* End of selectBooleanRadio */
+
+/*
+ * Start of selectManyCheckbox
+ */
+@agent webkit {
+  af|selectManyCheckbox .AFPanelFormLayoutContentCell {
+    -tr-rule-ref: selector(".AFPanelFormLayoutContentCell"); /* padding-top: 1px; (9712) */
+  }
 }
-af|selectBooleanRadio::content-input:rtl {
-  padding-right: 2px;
-  padding-left: 3px;
+/* End of selectManyCheckbox */
+
+/*
+ * Start of inputDate
+ */
+
+af|inputDate::content {
+    -tr-rule-ref: selector("af|inputText::content");
 }
 
 /* bugfix: When the inputDate component is grouped with other sibling components in a

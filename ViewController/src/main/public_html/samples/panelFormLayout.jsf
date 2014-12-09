@@ -5,12 +5,13 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/samples/template.jsf" id="pt1">
                 <f:facet name="content">
-                    <af:panelFormLayout id="pfl2" maxColumns="2" rows="3">
+                    <af:panelFormLayout id="pfl2" maxColumns="2" rows="4">
                         <af:panelLabelAndMessage label="Label 1" id="plam1">
                             <af:outputText value="outputText in panelLabelAndMessage" id="ot1"/>
                         </af:panelLabelAndMessage>
-                        <af:inputText id="it2" label="Label 2" columns="40" placeholder="normal inputText"/>
-                        <af:inputText id="it3" label="Label 3" rows="8" columns="60" placeholder="multi-row inputText"/>
+                        <af:inputText id="it2" label="Label 2" placeholder="normal inputText"/>
+                        <af:inputDate label="Label 1" id="id1"/>
+                        <af:inputText id="it3" label="Label 3" rows="6" columns="40" placeholder="multi-row inputText"/>
                         <af:selectOneRadio id="sor1" label="Label 1" layout="horizontal">
                             <af:selectItem label="Item Label 1" value="1" id="si1"/>
                             <af:selectItem label="Item Label 2" value="2" id="si2"/>
@@ -25,8 +26,11 @@
                             <af:panelGroupLayout id="pgl1" layout="vertical">
                                 <af:selectBooleanRadio id="sbr1" text="selectBooleanRadio 1" label="Label 1"
                                                        simple="true" group="opts"/>
-                                <af:selectBooleanRadio id="sbr2" text="selectBooleanRadio 2" label="Label 2"
-                                                       simple="true" group="opts"/>
+                                <af:panelGroupLayout id="pgl3">
+                                    <af:selectBooleanRadio id="sbr2" text="selectBooleanRadio 2" label="Label 2"
+                                                           simple="true" group="opts"/>
+                                    <af:inputText label="Label 5" id="it4" simple="true"/>
+                                </af:panelGroupLayout>
                                 <af:panelGroupLayout id="pgl2">
                                     <af:selectBooleanRadio id="sbr3" text="selectBooleanRadio 3" label="Label 3"
                                                            simple="true" group="opts"/>
@@ -35,6 +39,11 @@
                                 </af:panelGroupLayout>
                             </af:panelGroupLayout>
                         </af:panelLabelAndMessage>
+                        <af:selectManyCheckbox label="Label 1" id="smc1">
+                            <af:selectItem label="Item Label 1" value="1" id="si7"/>
+                            <af:selectItem label="Item Label 2" value="2" id="si8"/>
+                            <af:selectItem label="Item Label 3" value="3" id="si9"/>
+                        </af:selectManyCheckbox>
                     </af:panelFormLayout>
                 </f:facet>
             </af:pageTemplate>
