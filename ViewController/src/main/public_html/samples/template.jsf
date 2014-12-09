@@ -14,11 +14,11 @@
     <af:decorativeBox id="db1" topHeight="80px">
         <f:facet name="top">
             <af:panelFormLayout id="pfl1">
-                <af:selectOneRadio id="sor1" label="Select Skin" autoSubmit="true"
+                <af:selectOneRadio id="sor_skin" label="Select Skin"
                                    valueChangeListener="#{skinSelectorBean.skinFamilyValueChanged}"
-                                   value="#{skinSelectorBean.skinFamily}">
-                    <af:selectItem id="si1" label="Alta Workarounds" value="altaworkarounds"/>
-                    <af:selectItem id="si2" label="Alta" value="alta"/>
+                                   value="#{skinSelectorBean.skinFamily}" autoSubmit="true" immediate="true">
+                    <af:selectItem id="si_alta_wa" label="Alta Workarounds" value="altaworkarounds"/>
+                    <af:selectItem id="si_alta" label="Alta" value="alta"/>
                 </af:selectOneRadio>
             </af:panelFormLayout>
         </f:facet>

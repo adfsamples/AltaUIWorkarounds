@@ -24,12 +24,12 @@
                         <af:panelLabelAndMessage label="Label 1" id="plam2">
                             <af:panelGroupLayout id="pgl1" layout="vertical">
                                 <af:selectBooleanRadio id="sbr1" text="selectBooleanRadio 1" label="Label 1"
-                                                       simple="true"/>
+                                                       simple="true" group="opts"/>
                                 <af:selectBooleanRadio id="sbr2" text="selectBooleanRadio 2" label="Label 2"
-                                                       simple="true"/>
+                                                       simple="true" group="opts"/>
                                 <af:panelGroupLayout id="pgl2">
                                     <af:selectBooleanRadio id="sbr3" text="selectBooleanRadio 3" label="Label 3"
-                                                           simple="true"/>
+                                                           simple="true" group="opts"/>
                                     <af:inputText id="it1" label="Label 4" simple="true" columns="5"/>
                                     <af:outputText value="outputText1" id="ot2"/>
                                 </af:panelGroupLayout>
