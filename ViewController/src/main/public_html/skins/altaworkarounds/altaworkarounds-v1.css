@@ -65,7 +65,7 @@ af|panelFormLayout::label-cell label {
  */
 af|inputText::content {
   box-sizing: border-box;
-  height: 26px;
+  height: 26px; /* height + margin = 28px */
   margin: 1px;
   padding: 5px;
   line-height: 1.4;
