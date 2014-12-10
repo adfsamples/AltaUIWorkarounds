@@ -8,6 +8,28 @@
  * Alta UI bug fixes and enhancements
  ****************************************************************************************************************/
 
+.XLineHeight:alias {
+  line-height: 1.4;    
+}
+
+.XFormControlHeight:alias {
+  height: 28px;
+}
+
+.XFormControlHeightBorderBox:alias {
+  height: 26px;
+}
+
+.XFormControlVerticalMargins:alias {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.XFormCellVerticalPaddings:alias {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
 /*
  * Start of panelFormLayout
  */
@@ -16,7 +38,7 @@
  * alignment and vertical distribution. 
  */
 af|panelFormLayout {
-  line-height: 28px;
+  -tr-rule-ref: selector(".XLineHeight:alias");
 }
 
 /* use the same padding for the top and bottom of the content-cell to simplify
@@ -24,14 +46,12 @@ af|panelFormLayout {
  */
 af|panelFormLayout::content-cell,
 .AFPanelFormLayoutContentCell {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  -tr-rule-ref: selector(".XFormCellVerticalPaddings:alias");
 }
 
 /* ensure panelLabelAndMessage in a panelFormLayout uses the same padding */
 af|panelLabelAndMessage::content-cell.AFPanelFormLayoutContentCell {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  -tr-rule-ref: selector(".XFormCellVerticalPaddings:alias");
 }
 
 /* label-cell needs the same paddings as the content-cell  */
@@ -49,26 +69,37 @@ af|panelFormLayout::label-cell {
 label {
   box-sizing: border-box;
   display: inline-block;
-  vertical-align: middle;
-  line-height: 1.4;
+  -tr-rule-ref: selector(".AFLineHeight:alias");
   padding-top: 0;
   padding-bottom: 0;    
+  vertical-align: middle;
 }
 
 af|panelFormLayout::label-cell label {
   -tr-rule-ref: selector("label");
+  line-height: 28px;
   white-space: nowrap; /* more commonly expected */
 }
 
 /*
  * Start of inputText
  */
-af|inputText::content {
+
+/* basic styling of inputText */
+.XInputText:alias {
   box-sizing: border-box;
-  height: 26px; /* height + margin = 28px */
+  display: inline-block;
   margin: 1px;
   padding: 5px;
   line-height: 1.4;
+  position: static;
+  top: 0;
+  vertical-align: middle;
+  -tr-rule-ref: selector(".XFormControlHeightBorderBox:alias");    
+}
+
+af|inputText::content {
+  -tr-rule-ref: selector(".XInputText:alias");    
 }
 
 af|inputText:multi-row af|inputText::label {
@@ -174,3 +205,43 @@ af|inputDate::content {
   }
 }
 
+/*
+ * Start of inputNumberSpinbox
+ */
+af|inputNumberSpinbox::content {
+  -tr-rule-ref: selector(".XInputText:alias");    
+}
+
+af|inputNumberSpinbox::increment-cell,
+af|inputNumberSpinbox::decrement-cell,
+af|chooseDate::increment-cell,
+af|chooseDate::decrement-cell {
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  -tr-rule-ref: selector(".XFormControlHeightBorderBox:alias");    
+  -tr-rule-ref: selector(".XFormControlVerticalMargins:alias");    
+  line-height: 1.4;
+  padding-left: 0px;
+}
+
+af|inputNumberSpinbox::incrementor-icon-style,
+af|inputNumberSpinbox::decrementor-icon-style,
+af|chooseDate::spinbox-incrementor-icon-style,
+af|chooseDate::spinbox-decrementor-icon-style {
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+@agent ie {
+  af|inputNumberSpinbox::content,
+  af|inputNumberSpinbox::increment-cell,
+  af|chooseDate::increment-cell,
+  af|inputNumberSpinbox::decrement-cell,
+  af|chooseDate::decrement-cell {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+    -tr-rule-ref: selector(".XFormControlHeightBorderBox:alias");    
+  }
+}

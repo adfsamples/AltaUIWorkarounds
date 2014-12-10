@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="inputNumberSpinbox.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/samples/template.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelFormLayout id="pfl2">
+                        <af:inputText label="inputText" id="it1"/>
+                        <af:inputNumberSpinbox label="inputNumberSpinbox" id="ins1"/>
+                        <af:panelLabelAndMessage label="in panelLabelAndMessage" id="plam1">
+                            <af:inputNumberSpinbox id="ins2" label="in panelLabelAndMessage" simple="true"/>
+                        </af:panelLabelAndMessage>
+                    </af:panelFormLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>
