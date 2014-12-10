@@ -56,8 +56,7 @@ af|panelLabelAndMessage::content-cell.AFPanelFormLayoutContentCell {
 
 /* label-cell needs the same paddings as the content-cell  */
 af|panelFormLayout::label-cell {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  -tr-rule-ref: selector(".XFormCellVerticalPaddings:alias");
   vertical-align: top;  /* more commonly expected */
 }
 
@@ -66,18 +65,18 @@ af|panelFormLayout::label-cell {
  * is supposed to work better in most cases, and provides the consistent
  * styling for top, middle and bottom vertical-align of the label cell.
  */
-label {
+.XLabel:alias {
   box-sizing: border-box;
   display: inline-block;
-  -tr-rule-ref: selector(".AFLineHeight:alias");
+  vertical-align: middle;
   padding-top: 0;
   padding-bottom: 0;    
-  vertical-align: middle;
+  -tr-rule-ref: selector(".AFLineHeight:alias");
 }
 
-af|panelFormLayout::label-cell label {
-  -tr-rule-ref: selector("label");
-  line-height: 28px;
+af|panelFormLayout label {
+  -tr-rule-ref: selector(".XLabel:alias");
+  line-height: -tr-property-ref(".XFormControlHeight:alias", "height");
   white-space: nowrap; /* more commonly expected */
 }
 
