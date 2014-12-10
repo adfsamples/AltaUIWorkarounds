@@ -208,7 +208,12 @@ af|inputDate::content {
  * Start of inputNumberSpinbox
  */
 af|inputNumberSpinbox::content {
-  -tr-rule-ref: selector(".XInputText:alias");    
+  -tr-rule-ref: selector(".XInputText:alias");
+  margin-right: 0;
+}
+
+af|inputNumberSpinbox::content:rtl {
+  margin-left: 0;
 }
 
 af|inputNumberSpinbox::increment-cell,
