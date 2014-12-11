@@ -11,6 +11,16 @@
                         <af:panelLabelAndMessage label="in panelLabelAndMessage" id="plam1">
                             <af:inputNumberSpinbox id="ins2" label="in panelLabelAndMessage" simple="true"/>
                         </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="Grouped in panelLabelAndMessage" id="plam2">
+                            <af:panelGroupLayout id="pgl1" layout="horizontal">
+                                <!-- 
+                                the default layout does not work, use horizontal layout to line up 
+                                inputNumberSpinbox with other components.
+                                -->
+                                <af:inputNumberSpinbox id="ins3" label="Label 1" simple="true"/>
+                                <af:inputNumberSpinbox id="ins4" label="Label 1" simple="true"/>
+                            </af:panelGroupLayout>
+                        </af:panelLabelAndMessage>
                     </af:panelFormLayout>
                 </f:facet>
             </af:pageTemplate>
