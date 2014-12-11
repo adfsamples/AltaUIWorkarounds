@@ -60,8 +60,8 @@ af|panelFormLayout::label-cell {
   vertical-align: top;  /* more commonly expected */
 }
 
-/* uses inline-block and vertical-align (instead of padding) to line up 
- * the label with the corresponding content-cell. this approach 
+/* uses inline-block, vertical-align and line-height (instead of padding) 
+ * to line up the label with the corresponding content-cell. this approach 
  * is supposed to work better in most cases, and provides the consistent
  * styling for top, middle and bottom vertical-align of the label cell.
  */
@@ -102,26 +102,26 @@ af|inputText::content {
 }
 
 af|inputText:multi-row af|inputText::label {
-  padding-top: 3px; /* padding-top: 0px; (6644) */
+  -tr-inhibit: padding-top; /* padding-top: 0px; (6644) */
 }
 
 af|inputText:read-only .AFPanelFormLayoutContentCell,
 af|inputText:multi-row .AFPanelFormLayoutContentCell {
-  padding-top: 3px; /* padding-top: 0px; (6736) */
+  -tr-inhibit: padding-top; /* padding-top: 0px; (6736) */
 }
 
 @agent webkit {
   af|inputText::label {
-    padding-top: 3px;
+    -tr-inhibit: padding-top;
   }
 
   af|inputText:multi-row af|inputText::label {
-    padding-top: 3px;
+    -tr-inhibit: padding-top;
   }
   
   af|inputText:multi-row:read-only af|inputText::label {
-    vertical-align: inherit;
-    padding-top: 3px;
+    -tr-inhibit: vertical-align;
+    -tr-inhibit: padding-top;
   }    
 }
 /* End of inputText */
@@ -137,7 +137,7 @@ af|selectBooleanCheckbox::content,
 af|selectManyCheckbox::content,
 af|selectBooleanRadio::content,
 af|selectOneRadio::content {
-  line-height: 28px;
+  line-height: -tr-property-ref(".XDefaultFormControlHeight:alias", "height");
 }
 
 /* simplify the padding */
@@ -155,7 +155,7 @@ af|selectOneRadio::content-input:rtl {
   padding: 2px;
 }
 
-/* add some space between select items */
+/* enhancement: add some space between select items */
 af|selectBooleanCheckbox::item-text + af|selectBooleanCheckbox::content-input,
 af|selectManyCheckbox::item-text + af|selectManyCheckbox::content-input,
 af|selectBooleanRadio::item-text + af|selectBooleanRadio::content-input,
@@ -165,7 +165,7 @@ af|selectOneRadio::item-text + af|selectOneRadio::content-input {
 
 @agent webkit {
   af|selectOneRadio af|panelFormLayout::label-cell {
-    padding-top: 3px; /* padding-top: 7px; (10392) */
+    -tr-inhibit: all; /* padding-top: 7px; (10392) */
   }    
 }
 /* End of selectOneRadio */
