@@ -5,18 +5,18 @@
 @namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
 
 /*****************************************************************************************************************
- * Alta UI bug fixes and enhancements
+ * Alta UI Workarounds
  ****************************************************************************************************************/
 
-.XLineHeight:alias {
+.XDefaultLineHeight:alias {
   line-height: 1.4;    
 }
 
-.XFormControlHeight:alias {
+.XDefaultFormControlHeight:alias {
   height: 28px;
 }
 
-.XFormControlHeightBorderBox:alias {
+.XDefaultFormControlHeightBorderBox:alias {
   height: 26px;
 }
 
@@ -38,7 +38,7 @@
  * alignment and vertical distribution. 
  */
 af|panelFormLayout {
-  -tr-rule-ref: selector(".XLineHeight:alias");
+  -tr-rule-ref: selector(".XDefaultLineHeight:alias");
 }
 
 /* use the same padding for the top and bottom of the content-cell to simplify
@@ -76,7 +76,7 @@ af|panelFormLayout::label-cell {
 
 af|panelFormLayout label {
   -tr-rule-ref: selector(".XLabel:alias");
-  line-height: -tr-property-ref(".XFormControlHeight:alias", "height");
+  line-height: -tr-property-ref(".XDefaultFormControlHeight:alias", "height");
   white-space: nowrap; /* more commonly expected */
 }
 
@@ -94,7 +94,7 @@ af|panelFormLayout label {
   position: static;
   top: 0;
   vertical-align: middle;
-  -tr-rule-ref: selector(".XFormControlHeightBorderBox:alias");    
+  -tr-rule-ref: selector(".XDefaultFormControlHeightBorderBox:alias");    
 }
 
 af|inputText::content {
@@ -223,7 +223,7 @@ af|chooseDate::decrement-cell {
   display: inline-block;
   box-sizing: border-box;
   vertical-align: middle;
-  -tr-rule-ref: selector(".XFormControlHeightBorderBox:alias");    
+  -tr-rule-ref: selector(".XDefaultFormControlHeightBorderBox:alias");    
   -tr-rule-ref: selector(".XFormControlVerticalMargins:alias");    
   line-height: 1.4;
   padding-left: 0px;
@@ -246,6 +246,6 @@ af|chooseDate::spinbox-decrementor-icon-style {
     box-sizing: border-box;
     display: inline-block;
     vertical-align: middle;
-    -tr-rule-ref: selector(".XFormControlHeightBorderBox:alias");    
+    -tr-rule-ref: selector(".XDefaultFormControlHeightBorderBox:alias");    
   }
 }
