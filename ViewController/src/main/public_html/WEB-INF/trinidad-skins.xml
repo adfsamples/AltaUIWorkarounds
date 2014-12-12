@@ -5,7 +5,7 @@
     <family>altaworkarounds</family>
     <extends>alta-v1.desktop</extends>
     <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
-    <style-sheet-name>skins/altaworkarounds/altaworkarounds-v1.css</style-sheet-name>
+    <style-sheet-name>skins/altaworkarounds/altaworkarounds-v1-desktop.css</style-sheet-name>
     <bundle-name>com.adfsamples.altaworkarounds.Bundle</bundle-name>
   </skin>
 </skins>
