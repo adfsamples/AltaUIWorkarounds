@@ -77,6 +77,30 @@ af|panelLabelAndMessage::content-cell.AFPanelFormLayoutContentCell {
   -tr-rule-ref: selector(".XFormCellVerticalPaddings:alias");
 }
 
+/* make horizontal padding even, and align them vertically with non-input
+ * content, such as content of the inputText. 
+ * cell padding + input border + input padding 
+ * = -tr-output-content-padding
+ * See below.
+ */
+.AFPanelFormLayoutContentCell,
+af|panelFormLayout::content-cell,
+af|panelLabelAndMessage::content-cell.AFPanelFormLayoutContentCell,
+.AFPanelFormLayoutContentCell:rtl,
+af|panelFormLayout::content-cell:rtl,
+af|panelLabelAndMessage::content-cell.AFPanelFormLayoutContentCell:rtl {
+  padding-left: 7px; 
+  padding-right: 7px;
+}
+
+/* For non-input content, we need to render some padding on the panelLabelAndMessage
+ * content-cell to align the leading edge of the content with the input content. */
+/*
+af|panelLabelAndMessage {
+  -tr-output-content-padding: 14px;
+}
+*/
+
 /* make label an fixed-height inline-block element, so that it aligns with
  * other components easier, either for start or top labelAlignment, or 
  * for top, middle or bottom vertical-align.
@@ -104,7 +128,7 @@ af|panelFormLayout label {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  padding: 4px;
+  padding: 4px 6px;
   border-width: 1px;
   -tr-rule-ref: selector(".XDefaultLineHeight:alias");    
   -tr-rule-ref: selector(".XTargetLineBoxHeight:alias");    
