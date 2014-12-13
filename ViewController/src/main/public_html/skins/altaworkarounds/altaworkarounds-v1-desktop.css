@@ -22,7 +22,7 @@
  * To simplify alignment, as long as possible, try keep vertical padding
  * and margin distributed evenly to the top and bottom side, so that 
  * they work for any "vertical-align" value in the same way. For 
- * horizontal padding and margin, distribut them evenly to the left 
+ * horizontal padding and margin, distribute them evenly to the left 
  * and right side, so that they work for both ltr and rtl direction.
  */
 .XTargetLineBoxHeight:alias {
