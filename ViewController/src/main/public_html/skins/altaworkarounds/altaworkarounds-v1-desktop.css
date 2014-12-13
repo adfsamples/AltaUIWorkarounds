@@ -29,8 +29,9 @@
   height: 28px;
 }
 
-/* The target line-height in pixel for the default font-size (12px) is 18px,
- * thus set line-height here to unitless value of 1.5 (18/12 = 1.5). 
+/* The target line-height in pixel for the default font-size (12px) is 18px 
+ * (leaving 10px for the top and bottom paddings), thus set line-height here
+ * to unitless value of 1.5 (18/12 = 1.5). 
  */
 .XDefaultLineHeight:alias {
   line-height: 1.5;
