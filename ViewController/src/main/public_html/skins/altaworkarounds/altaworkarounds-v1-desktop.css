@@ -120,6 +120,10 @@ af|panelFormLayout label {
   -tr-rule-ref: selector(".XLabel:alias");
 }
 
+af|outputLabel {
+  -tr-inhibit: line-height; /* line-height: 28px; */
+}
+
 /*
  * Start of inputText
  */
