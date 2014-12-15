@@ -278,6 +278,17 @@ af|selectOneRadio::item-text + af|selectOneRadio::content-input {
     -tr-inhibit: all; /* padding-top: 7px; (10392) */
   }    
 }
+
+af|selectOneRadio .AFPanelFormLayoutContentCell {
+  -tr-inhibit: padding-top;
+}
+
+@agent webkit, gevko, ie {
+  af|selectOneRadio .AFPanelFormLayoutContentCell {
+    -tr-inhibit: padding-top;
+  }
+}
+
 /* End of selectOneRadio */
 
 /*
