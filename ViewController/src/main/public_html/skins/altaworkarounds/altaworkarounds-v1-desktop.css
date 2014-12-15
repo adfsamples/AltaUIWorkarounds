@@ -318,11 +318,23 @@ af|inputDate::content {
  */
 af|inputNumberSpinbox::content {
   -tr-rule-ref: selector(".XInputText:alias");
-  margin-right: 0;
+  -tr-inhibit: position, top;
+  border-right: none;
 }
 
 af|inputNumberSpinbox::content:rtl {
-  margin-left: 0;
+  border-left: none;
+}
+
+@agent webkit, gecko, ie {
+  af|inputNumberSpinbox::content {
+    -tr-rule-ref: selector(".XInputText:alias");
+    border-right: none;
+  }
+
+  af|inputNumberSpinbox::content:rtl {
+    border-left: none;
+  }
 }
 
 af|inputNumberSpinbox::increment-cell,
@@ -344,9 +356,11 @@ af|chooseDate::spinbox-incrementor-icon-style,
 af|chooseDate::spinbox-decrementor-icon-style {
   box-sizing: border-box;
   display: inline-block;
+    vertical-align: middle;
+    -tr-rule-ref: selector(".XDefaultFormControlHeightBorderBox:alias");    
 }
 
-@agent ie {
+@agent webkit, gecko, ie {
   af|inputNumberSpinbox::content,
   af|inputNumberSpinbox::increment-cell,
   af|chooseDate::increment-cell,
