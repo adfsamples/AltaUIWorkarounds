@@ -115,6 +115,7 @@ af|panelLabelAndMessage {
   -tr-rule-ref: selector(".XTargetLineBoxHeight:alias");
 }
 
+af|outputLabel label,
 af|panelFormLayout label {
   -tr-rule-ref: selector(".XLabel:alias");
 }

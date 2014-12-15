@@ -35,7 +35,7 @@
                                     <af:selectBooleanRadio id="sbr3" text="selectBooleanRadio 3" label="Label 3"
                                                            simple="true" group="opts"/>
                                     <af:inputText id="it1" label="Label 4" simple="true" columns="5"/>
-                                    <af:outputText value="outputText1" id="ot2"/>
+                                    <af:outputLabel value="label 1" id="ol2"/>
                                 </af:panelGroupLayout>
                             </af:panelGroupLayout>
                         </af:panelLabelAndMessage>
