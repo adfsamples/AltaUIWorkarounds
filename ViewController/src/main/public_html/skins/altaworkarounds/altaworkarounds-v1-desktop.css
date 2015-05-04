@@ -30,7 +30,7 @@
 }
 
 /* The target line-height in pixel for the default font-size (12px) is 18px 
- * (leaving 10px for the top and bottom paddings), thus set line-height here
+ * (leaving 10px for the top and bottom paddings and borders), thus set line-height here
  * to unitless value of 1.5 (18/12 = 1.5). 
  */
 .XDefaultLineHeight:alias {
@@ -130,11 +130,17 @@ af|outputLabel {
 
 /* basic styling of inputText */
 .XInputText:alias {
-  box-sizing: border-box;
+  -tr-inhibit: box-sizing;
+  -tr-inhibit: -moz-box-sizing;
+  -tr-inhibit: -webkit-box-sizing;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   display: inline-block;
   vertical-align: middle;
   margin: 0;
   padding: 4px 6px;
+  height: 18px;
   border-width: 1px;
   -tr-rule-ref: selector(".XDefaultLineHeight:alias");    
   -tr-rule-ref: selector(".XTargetLineBoxHeight:alias");    
@@ -142,6 +148,14 @@ af|outputLabel {
 
 af|inputText::content {
   -tr-rule-ref: selector(".XInputText:alias");    
+}
+
+@agent webkit, gecko, ie {
+    af|inputText::content {
+        box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+    }
 }
 
 af|inputText::label {
@@ -315,8 +329,36 @@ af|selectOneRadio .AFPanelFormLayoutContentCell {
  * Start of inputDate
  */
 
+af|inputDate {
+    display: inline-block;
+}
+
+/*
+ * Alter the default box model from content-box to border-box in order to make a room 
+ * with a padding-right to allow an icon appear inside the input control.
+ */
 af|inputDate::content {
     -tr-rule-ref: selector("af|inputText::content");
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 28px; /* 18px content height + 4px * 2 padding + 1px * 2 border  */
+    padding-right: 25px;
+}
+
+/* chrome specific alignment */
+@agent webkit, gecko, ie {
+  af|inputDate::content {
+    -tr-inhibit: position;
+    -tr-inhibit: top;
+  }
+  
+  /* alta icon is 16px height, 2px smaller than the content height of the input control. 
+   * so, move it 1px down.
+   */
+  af|inputDate::launch-icon-style {
+    top: 1px;
+  }
 }
 
 /* bugfix: When the inputDate component is grouped with other sibling components in a
