@@ -14,7 +14,8 @@
                                panelFormLayout component, it might not be vertically aligned properly in webkit
                                browsers. To fix it, change the vertical-align property from "50%" in Alta skin to
                                "middle".</p>
-                            <af:panelFormLayout id="pfl1">
+                            <af:panelFormLayout id="pfl1" labelAlignment="start" labelWidth="120">
+                                <af:inputDate id="id2" label="Label" placeholder="inputDate"/>
                                 <af:panelLabelAndMessage id="plam1" label="Starts">
                                     <af:panelGroupLayout id="pgl3">
                                         <af:selectBooleanRadio id="sbr1" text="On" label="On" simple="true"/>

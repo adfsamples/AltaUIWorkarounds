@@ -329,10 +329,6 @@ af|selectOneRadio .AFPanelFormLayoutContentCell {
  * Start of inputDate
  */
 
-af|inputDate {
-    display: inline-block;
-}
-
 /*
  * Alter the default box model from content-box to border-box in order to make a room 
  * with a padding-right to allow an icon appear inside the input control.
